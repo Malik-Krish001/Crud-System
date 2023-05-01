@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Phone No.</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+        <th scope="col">Click for action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+    {% for data in key  %}
+    <tr>
+        <th scope="row">{{data.name}}</th>
+        <td>{{data.phone}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.address}}</td>
+       <td> <a href="{% url 'delete' data.id %}"><input type="button" class="btn btn-primary" value="Delete"> </a>
+        <a href="{% url 'edit' data.id %}"> <input type="button" class="btn btn-primary" value="Edit Data"></a> 
+        <a href="{% url 'register' %}"> <input type="button" class="btn btn-primary" value="Registration"></a> 
+       </td>
+    </tr>
+    
+    {% endfor %}
+    </tbody>
+</tabl>
+{% endblock body %}

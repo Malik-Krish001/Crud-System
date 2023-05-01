@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+   {% block body %}
+   <form  method="POST">
+    {% csrf_token %}
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">your name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name" placeholder="Enter Name">  
+      </div>
+      <div class="mb-3">
+         <label for="exampleInputPassword1" class="form-label">Phone No.</label>
+         <input type="text" class="form-control" id="exampleInputPassword1" name="phone" placeholder="Enter Phone No.">
+      </div>
+      
+      <div class="mb-3">
+           <label for="exampleInputEmail1" class="form-label">Email address</label>
+           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter your Email">
+      </div>
+      <div class="mb-3">
+           <label for="exampleInputEmail1" class="form-label">Address</label>
+           <input type="text" class="form-control"   name="address" placeholder="Enter your Email">
+      </div>
+ 
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <a href="{% url 'show' %}"> <input type="button" value="Show Data" class="btn btn-primary"  > </a>
+   
+    </form>
+   
+  {% endblock body %}
+    
+</body>
+</html>
